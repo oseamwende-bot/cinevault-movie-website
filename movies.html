@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Movies - Online Movie Information System</title>
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<nav class="navbar">
+
+<a href="index.html" class="logo" style="text-decoration:none;">🎬 CineVault</a>
+
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="movies.html" class="active">Movies</a></li>
+</ul>
+
+</nav>
+</header>
+
+
+<!-- MAIN CONTENT -->
+<main class="container">
+
+
+
+
+<!-- MOVIE SEARCH AND FILTERS -->
+<section class="controls-bar">
+
+<input
+type="text"
+id="search-input"
+placeholder="Search movies by title..."
+/>
+
+<select id="genre-filter">
+
+<option value="all">All Genres</option>
+<option value="Action">Action</option>
+<option value="Sci-Fi">Sci-Fi</option>
+<option value="Drama">Drama</option>
+<option value="Animation">Animation</option>
+<option value="Comedy">Comedy</option>
+<option value="Horror">Horror</option>
+
+</select>
+
+<button
+type="button"
+id="toggle-watchlist-btn"
+class="btn-secondary">
+
+My Watchlist
+(<span id="watchlist-count">0</span>)
+
+</button>
+
+</section>
+
+
+<h2 id="catalog-heading">All Movies</h2>
+<div id="movie-grid" class="movie-grid"></div>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+<p>&copy; 2026 Online Movie Information System</p>
+</footer>
+
+
+<!-- JAVASCRIPT -->
+<script src="script.js"></script>
+
+
+
+</body>
+</html>

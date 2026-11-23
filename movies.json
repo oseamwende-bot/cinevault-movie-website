@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "title": "Inception",
+    "genre": "Sci-Fi",
+    "release_year": 2010,
+    "rating": 8.8,
+    "poster_url": "images/inception.jpg",
+    "overview": "A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea."
+  },
+  {
+    "id": 2,
+    "title": "The Dark Knight",
+    "genre": "Action",
+    "release_year": 2008,
+    "rating": 9.0,
+    "poster_url": "images/the-dark-knight.jpg",
+    "overview": "Batman raises the stakes in his war on crime with the help of Lt. Jim Gordon and District Attorney Harvey Dent."
+  },
+  {
+    "id": 3,
+    "title": "Interstellar",
+    "genre": "Sci-Fi",
+    "release_year": 2014,
+    "rating": 8.7,
+    "poster_url": "images/interstellar.jpg",
+    "overview": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival."
+  },
+  {
+    "id": 4,
+    "title": "Parasite",
+    "genre": "Drama",
+    "release_year": 2019,
+    "rating": 8.5,
+    "poster_url": "images/parasite.jpg",
+    "overview": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan."
+  },
+  {
+    "id": 5,
+    "title": "Spider-Man: Into the Spider-Verse",
+    "genre": "Animation",
+    "release_year": 2018,
+    "rating": 8.4,
+    "poster_url": "images/spider-verse.jpg",
+    "overview": "Teen Miles Morales becomes the Spider-Man of his universe and must join with five spider-powered individuals from other dimensions."
+  },
+  {
+    "id": 6,
+    "title": "Mad Max: Fury Road",
+    "genre": "Action",
+    "release_year": 2015,
+    "rating": 8.1,
+    "poster_url": "images/mad-max.jpg",
+    "overview": "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search for her homeland with the aid of a group of female prisoners."
+  },
+  {
+    "id": 7,
+    "title": "The Queen's Gambit",
+    "genre": "Drama",
+    "release_year": 2020,
+    "rating": 8.6,
+    "poster_url": "images/queens-gambit.jpg",
+    "overview": "(TV series) In the 1950s and 60s, an orphaned chess prodigy rises through the tournament world while fighting addiction and loneliness to become the best player alive."
+  },
+  {
+    "id": 8,
+    "title": "The Blacklist",
+    "genre": "Action",
+    "release_year": 2013,
+    "rating": 7.9,
+    "poster_url": "images/the-blacklist.jpg",
+    "overview": "(TV series) A notorious fugitive surrenders to the FBI and offers to help catch dangerous criminals, but only if he works with a young profiler named Elizabeth Keen."
+  },
+  {
+    "id": 9,
+    "title": "Coco",
+    "genre": "Animation",
+    "release_year": 2017,
+    "rating": 8.4,
+    "poster_url": "images/coco.jpg",
+    "overview": "A music-loving boy in Mexico is magically transported to the Land of the Dead, where he searches for his great-great-grandfather to understand his family's ban on music."
+  }
+]

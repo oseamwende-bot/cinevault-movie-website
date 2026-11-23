@@ -1,0 +1,377 @@
+/* CSS Variables & Theme Setup */
+:root {
+--bg-primary: #121212;
+--bg-secondary: #1e1e1e;
+--bg-card: #252525;
+--text-primary: #ffffff;
+--text-secondary: #b0b0b0;
+--accent-color: #e50914; /* Netflix-inspired cinematic red */
+--accent-hover: #f6121d;
+--transition-speed: 0.3s ease;
+}
+
+html, body{
+    margin:0;
+    padding:0;
+    min-height:100%;
+}
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+header{
+    width:100%;
+    padding:15px 0;
+    backgroung-color:#17243a;
+}
+
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: var(--bg-primary);
+color: var(--text-primary);
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+background-image:url("movie.png");
+background-size:100% auto;
+background-repeat:no repeat;
+}
+main{
+    flex:1;
+}
+
+/* Navigation Bar */
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1.2rem 5%;
+background-color:#1a1a1a;
+border-bottom: 1px solid #333;
+}
+
+.logo {
+font-size: 1.5rem;
+font-weight: bold;
+color: var(--accent-color);
+}
+
+.nav-links {
+list-style: none;
+display: flex;
+gap: 2rem;
+}
+
+.nav-links a {
+text-decoration: none;
+color: var(--text-secondary);
+font-weight: 500;
+transition: color var(--transition-speed);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+color: var(--text-primary);
+}
+
+/* Hero Section */
+.hero {
+background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+padding: 6rem 5%;
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.hero-content h1 {
+font-size: 2.8rem;
+margin-bottom: 1rem;
+}
+
+.hero-content p {
+font-size: 1.1rem;
+color: var(--text-secondary);
+margin-bottom: 2rem;
+max-width: 600px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.cta-button {
+display: inline-block;
+background-color: var(--accent-color);
+color: var(--text-primary);
+padding: 0.8rem 2rem;
+border-radius: 4px;
+text-decoration: none;
+font-weight: bold;
+transition: background-color var(--transition-speed);
+}
+
+.cta-button:hover {
+background-color: var(--accent-hover);
+}
+
+/* Catalog & Search Section */
+.catalog-main {
+padding: 3rem 5%;
+flex: 1;
+}
+
+.search-filter-section {
+text-align: center;
+margin-bottom: 2.5rem;
+}
+
+.search-filter-section h1 {
+margin-bottom: 1.5rem;
+font-size: 2rem;
+}
+
+.search-bar-container input {
+width: 100%;
+max-width: 500px;
+padding: 0.9rem 1.2rem;
+border-radius: 30px;
+border: 1px solid #444;
+background-color: var(--bg-secondary);
+color: var(--text-primary);
+font-size: 1rem;
+outline: none;
+transition: border-color var(--transition-speed);
+}
+
+.search-bar-container input:focus {
+border-color: var(--accent-color);
+}
+
+/* Responsive Movie Grid Layout */
+.featured-section {
+padding: 3rem 5%;
+}
+
+.featured-section h2 {
+margin-bottom: 1.5rem;
+font-size: 1.5rem;
+}
+
+.movie-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+gap: 2rem;
+}
+
+/* Style template placeholder for movie cards (Developer 2 injection target) */
+.movie-card {
+background-color: var(--bg-card);
+border-radius: 8px;
+overflow: hidden;
+transition: transform var(--transition-speed);
+box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.movie-card:hover {
+transform: translateY(-5px);
+}
+
+.movie-card img {
+width: 100%;
+height: 320px;
+object-fit: cover;
+}
+
+.movie-info {
+padding: 1rem;
+}
+
+.movie-info h3 {
+font-size: 1.1rem;
+margin-bottom: 0.5rem;
+}
+
+.movie-info p {
+color: var(--text-secondary);
+font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+text-align: center;
+padding: 1.5rem;
+background-color: var(--bg-secondary);
+color: var(--text-secondary);
+font-size: 0.85rem;
+border-top: 1px solid #333;
+margin-top: auto;
+}
+/* Hero Section */
+.hero {
+text-align: center;
+padding: 4rem 1.5rem;
+background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+border-bottom: 1px solid #334155;
+}
+
+.hero h1 {
+font-size: 2.2rem;
+margin-bottom: 0.75rem;
+color: #f8fafc;
+}
+
+.hero p {
+color: #94a3b8;
+font-size: 1.05rem;
+margin-bottom: 1.5rem;
+}
+
+.hero-btn {
+display: inline-block;
+width: auto;
+padding: 0.75rem 1.75rem;
+text-decoration: none;
+}
+
+/* Main Container */
+.container {
+max-width: 1100px;
+margin: 0 auto;
+padding: 2rem 1.5rem;
+}
+
+.container h2 {
+margin-bottom: 1.5rem;
+color: #f8fafc;
+font-size: 1.5rem;
+}
+
+/* Search & Filter Bar */
+.controls-bar {
+display: flex;
+flex-wrap: wrap;
+gap: 1rem;
+margin-bottom: 2rem;
+}
+
+.controls-bar input,
+.controls-bar select {
+padding: 0.7rem 0.9rem;
+border-radius: 6px;
+border: 1px solid #475569;
+background-color: #1e293b;
+color: #f8fafc;
+font-size: 0.95rem;
+}
+
+.controls-bar input {
+flex: 1;
+min-width: 220px;
+}
+
+.controls-bar input:focus,
+.controls-bar select:focus {
+outline: none;
+border-color: #38bdf8;
+}
+
+.btn-secondary {
+padding: 0.7rem 1.2rem;
+border: 1px solid #38bdf8;
+border-radius: 6px;
+background-color: transparent;
+color: #38bdf8;
+font-weight: bold;
+cursor: pointer;
+}
+
+.btn-secondary:hover,
+.btn-secondary.active {
+background-color: #38bdf8;
+color: #0f172a;
+}
+
+/* Movie Grid & Cards */
+.movie-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+gap: 1.5rem;
+}
+
+.movie-card {
+background-color: #1e293b;
+border: 1px solid #334155;
+border-radius: 10px;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.movie-card img {
+width: 100%;
+height: 320px;
+object-fit: cover;
+}
+
+.movie-info {
+padding: 1rem;
+}
+
+.movie-info h3 {
+font-size: 1.1rem;
+margin-bottom: 0.4rem;
+}
+
+.movie-meta {
+display: flex;
+justify-content: space-between;
+font-size: 0.85rem;
+color: #94a3b8;
+margin-bottom: 0.6rem;
+}
+
+.movie-rating {
+color: #facc15;
+font-weight: bold;
+}
+
+.movie-overview {
+font-size: 0.85rem;
+color: #cbd5e1;
+line-height: 1.4;
+margin-bottom: 1rem;
+}
+
+.watchlist-btn {
+width: 100%;
+padding: 0.6rem;
+border: none;
+border-radius: 6px;
+background-color: #334155;
+color: #f8fafc;
+font-weight: bold;
+cursor: pointer;
+}
+
+.watchlist-btn:hover {
+background-color: #475569;
+}
+
+.watchlist-btn.saved {
+background-color: #22c55e;
+color: #0f172a;
+}
+
+/* Footer */
+.footer {
+width:100%;
+text-align: center;
+padding: 1.5rem;
+margin-top: 3rem;
+border-top: 1px solid #334155;
+color: #64748b;
+font-size: 0.9rem;
+}
+
+

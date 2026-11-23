@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Movie Details - Online Movie Information System</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="stylesheet" href="style.css" />
+<style>
+  .details { display:flex; flex-wrap:wrap; gap:2rem; background:#1e293b; border:1px solid #334155; border-radius:10px; padding:1.5rem; }
+  .details img { width:300px; max-width:100%; border-radius:8px; object-fit:cover; }
+  .details-info { flex:1; min-width:260px; }
+  .details-info h2 { margin-bottom:.8rem; }
+  .details-info .movie-meta { justify-content:flex-start; gap:1.5rem; font-size:1rem; }
+  .details-info .movie-overview { font-size:1rem; margin:1rem 0 1.5rem; }
+  .details-info button { width:auto; padding:.7rem 1.5rem; }
+  .back-link { display:inline-block; margin-bottom:1rem; color:#38bdf8; text-decoration:none; }
+</style>
+</head>
+<body>
+
+<header>
+<nav class="navbar">
+<a href="index.html" class="logo" style="text-decoration:none;">🎬 CineVault</a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="movies.html">Movies</a></li>
+</ul>
+</nav>
+</header>
+
+<main class="container">
+  <a class="back-link" href="movies.html">&larr; Back to all movies</a>
+  <div id="details-box"></div>
+</main>
+
+<footer class="footer">
+<p>&copy; 2026 Online Movie Information System</p>
+</footer>
+
+<script>
+// same storage key as script.js, so the watchlist is shared between the pages
+const WATCHLIST_KEY = "movieSystemWatchlist";
+
+function getWatchlist() {
+  return JSON.parse(localStorage.getItem(WATCHLIST_KEY)) || [];
+}
+
+function toggleWatchlist(id) {
+  let list = getWatchlist();
+  list = list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
+  localStorage.setItem(WATCHLIST_KEY, JSON.stringify(list));
+}
+
+// the movie id is in the address:  details.html?id=3
+const movieId = Number(new URLSearchParams(window.location.search).get("id"));
+
+fetch("movies.json")
+  .then((response) => response.json())
+  .then((movies) => {
+    const box = document.getElementById("details-box");
+    const movie = movies.find((m) => m.id === movieId);
+
+    if (!movie) {
+      box.innerHTML = "<p>Movie not found.</p>";
+      return;
+    }
+
+    document.title = movie.title + " - Movie Details";
+
+    function show() {
+      const saved = getWatchlist().includes(movie.id);
+      box.innerHTML = `
+        <div class="details">
+          <img src="${movie.poster_url}" alt="${movie.title}" />
+          <div class="details-info">
+            <h2>${movie.title}</h2>
+            <div class="movie-meta">
+              <span>Genre: ${movie.genre}</span>
+              <span>Year: ${movie.release_year}</span>
+              <span class="movie-rating">&#9733; ${movie.rating} / 10</span>
+            </div>
+            <p class="movie-overview">${movie.overview}</p>
+            <button type="button" class="watchlist-btn ${saved ? "saved" : ""}" id="wl-btn">
+              ${saved ? "✓ In Watchlist" : "+ Add to Watchlist"}
+            </button>
+          </div>
+        </div>`;
+      document.getElementById("wl-btn").addEventListener("click", () => {
+        toggleWatchlist(movie.id);
+        show();
+      });
+    }
+    show();
+  })
+  .catch(() => {
+    document.getElementById("details-box").innerHTML = "<p>Could not load the movie.</p>";
+  });
+</script>
+</body>
+</html>
